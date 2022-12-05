@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "./static/css/main.789fa5b9.css",
+    "main.js": "./static/js/main.cd73dc98.js",
+    "static/js/787.72a3c617.chunk.js": "./static/js/787.72a3c617.chunk.js",
+    "static/media/black-zone.png": "./static/media/black-zone.3f6f6c9ec081ff8f60a1.png",
+    "static/media/banner_2.jpg": "./static/media/banner_2.c51a4c699fc1f54eb1d6.jpg",
+    "static/media/modal-signin-signup.png": "./static/media/modal-signin-signup.a9c7b03a929357cd7fca.png",
+    "static/media/deep-see.png": "./static/media/deep-see.bd1e5d99ec29000acfeb.png",
+    "static/media/banner_4.jpg": "./static/media/banner_4.6734145d36d57732a510.jpg",
+    "static/media/banner_6.jpg": "./static/media/banner_6.df0d052c30948e3626bc.jpg",
+    "static/media/banner_3.jpg": "./static/media/banner_3.65a5b0fa313f51dd53e4.jpg",
+    "static/media/banner_5.jpg": "./static/media/banner_5.d9ff2e1316e44fbc85dc.jpg",
+    "static/media/banner_1.jpg": "./static/media/banner_1.e287a322a37c4c189d8b.jpg",
+    "static/media/pizza-size-3.png": "./static/media/pizza-size-3.14755956cfa1962d09ce.png",
+    "static/media/credentials.png": "./static/media/credentials.c195773a56b6e1f7e650.png",
+    "static/media/pizza-size-2.png": "./static/media/pizza-size-2.c4f693e3735d0e5cf4b4.png",
+    "static/media/pizza-base.png": "./static/media/pizza-base.965c88b93696b9411ac8.png",
+    "static/media/pizza-size-1.png": "./static/media/pizza-size-1.5fad53050d2a025801eb.png",
+    "index.html": "./index.html",
+    "main.789fa5b9.css.map": "./static/css/main.789fa5b9.css.map",
+    "main.cd73dc98.js.map": "./static/js/main.cd73dc98.js.map",
+    "787.72a3c617.chunk.js.map": "./static/js/787.72a3c617.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.789fa5b9.css",
+    "static/js/main.cd73dc98.js"
+  ]
+}
