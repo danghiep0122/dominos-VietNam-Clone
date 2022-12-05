@@ -1,0 +1,166 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+  text-align: center;
+  background-color: #004666;
+  padding: 0 16px;
+  position: fixed;
+  z-index: 10;
+  width: 98%;
+}
+
+.logoAndLanguage,
+.navbarMobile,
+.navbarPC,
+.navList,
+.navbarButtonPC {
+  display: flex;
+}
+
+.navList {
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  text-transform: uppercase;
+  list-style: none;
+
+  & a {
+    text-decoration: none;
+  }
+
+  & li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 46px;
+    height: 64px;
+    padding: 8px 20px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 1.5px;
+  }
+}
+
+.navList li:hover,
+.buttonPC:hover {
+  cursor: pointer;
+  background-color: #00628f;
+}
+
+.languageSwitch {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 70px;
+  margin-left: 10px;
+
+  & .languageFlag {
+    width: 32px;
+    height: 16px;
+    cursor: pointer;
+  }
+}
+
+.navbarButtonPC {
+  position: relative;
+  align-items: center;
+  justify-content: center;
+
+  & .buttonPC {
+    padding: 28px 8px;
+  }
+}
+
+.cartNoti {
+  position: absolute;
+  top: 12px;
+  right: 10px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  font-size: 12px;
+  font-weight: 800;
+  color: #fff;
+  background-color: rgb(170 25 52);
+  border-radius: 4px;
+}
+
+// Mobile
+@media only screen and (max-width: 575px) {
+  .navbar {
+    height: 48px;
+  }
+
+  .dominoLogoNoText {
+    display: block;
+    padding: 12px 20px;
+  }
+
+  .dominoLogo,
+  .dominoLogoPc,
+  .navbarPC {
+    display: none;
+  }
+}
+
+// Tablet
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .navbar {
+    height: 80px;
+  }
+
+  .dominoLogoNoText {
+    display: block;
+    padding: 26px 6px;
+    cursor: pointer;
+  }
+
+  .navbarPC,
+  .navList {
+    flex-grow: 1;
+  }
+
+  .navbarPC li {
+    padding: 8px 10px;
+  }
+
+  .dominoLogo,
+  .dominoLogoPc,
+  .navbarSmall,
+  .navbarMobile,
+  .languageSwitch {
+    display: none;
+  }
+}
+
+// PC and bigger
+@media only screen and (min-width: 768px) {
+  .navbar {
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+  }
+
+  .dominoLogoPc {
+    display: block;
+  }
+
+  .navbarPC,
+  .navList {
+    flex-grow: 1;
+  }
+
+  .dominoLogo,
+  .dominoLogoNoText,
+  .navbarMobile {
+    display: none;
+  }
+}

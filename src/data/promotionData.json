@@ -1,0 +1,30 @@
+[
+    {
+        "id": "m1t1tue",
+        "imgUrl":"https://img.dominos.vn/Banner+Promotion_M1T1_T3+H%C3%80NG+TU%E1%BA%A6N-03.png",
+        "title": "MUA 1 TẶNG 1 THỨ 3",
+        "description":["Mua 1 bánh Pizza size M/L kèm Nước uống bất kỳ sẽ được tặng 1 bánh Pizza cùng cỡ."],
+        "button":[{"title":"Đặt ngay Size M"}, {"title":"Đặt ngay Size L"}]
+    },
+    {
+        "id": "blfcbm",
+        "imgUrl":"https://img.dominos.vn/Banner+promotion_BLACK+FRIDAY-CYBER+MONDAY-03.png",
+        "title": "[BLACK FRIDAY & CYBER MONDAY] PIZZA BÁNH XÈO NHẬT CHỈ 1,000Đ",
+        "description": [
+            "Pizza Bánh Xèo Nhật cỡ M/L chỉ 1.000Đ khi mua kèm 1 pizza dòng Premium/Signature cùng cỡ và thức uống nguyên giá.",
+            "Áp dụng từ 21/11 đến 28/11/2022."],
+        "button":[{"title":"Combo 259K"}, {"title":"Combo 359K"}]
+
+    },
+    {
+        "id": "dmncccl",
+        "imgUrl":"https://img.dominos.vn/Banner+promotion_COKE-FIFA+WC-03.png",
+        "title": "[DOMINO'S X COCA-COLA] COMBO ƯU ĐÃI ĐẾN 30% KÈM QUÀ TẶNG GIỚI HẠN ",
+        "description": [
+            "Combo 259K (2-3 người): 1 Pizza Premium cỡ vừa (M), 1 Khai vị tổng hợp, 2 thức uống nhỏ, 1 quà tặng túi canvas Coca-Cola",
+            "Combo 359K (4-5 người): 2 Pizza Favorite cỡ lớn (L), 4 thức uống nhỏ, 1 quà tặng túi canvas Coca-Cola",
+            "Áp dụng từ 25/11 đến 12/12/2022."
+        ],
+        "button":[{"title":"Đặt ngay Size M"}, {"title":"Đặt ngay Size L"}]
+    }
+]
