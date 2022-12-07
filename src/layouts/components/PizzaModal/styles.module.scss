@@ -143,6 +143,10 @@
             margin-left: 16px;
         }
     }
+
+    & hr {
+        border: 1px solid rgb(114 116 120 / 20%);
+    }
 }
 
 .productDescrIcon {
@@ -186,4 +190,71 @@
     border: none;
     font-size: 1.4rem;
     cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
+    .modalWrapper {
+        flex-direction: column;
+        width: 94vw;
+        margin: 0;
+        height: 80vh;
+    }
+    .modalProductDescrWrapper {
+        margin: .4rem;
+    }
+    .imageWrapper, .imageWrapper img {
+        height: 200px;
+        width: 100%;
+        object-fit: cover;
+    }
+    
+    .modalTitleSeperate {
+        margin: 1rem 0;
+        width: 16vw;
+        border-bottom: 1px #727478 solid;
+    }
+    .modalContent {
+        width: 100%;
+        margin-bottom: 8rem;
+    }
+    h2.productTitle {
+        margin: 0;
+        font-weight: 500;
+    }
+    .productDescrSection {
+        padding: 0;
+        & ul {
+            padding: 0;
+        }
+        & div {
+            font-size: 1rem;
+        }
+    }
+    .addToCartSection {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+    .cartItemsQty input, 
+    .cartItemsQty button {
+        font-size: 1rem;
+    }
+    .addToCartButton {
+        width: 100%;
+        padding: .8rem;
+        font-size: 1rem;
+        margin-top: .4rem;
+    }
+}
+@media screen and (min-width: 576px) and (max-width: 800px) {
+    .modalWrapper {
+        height: 90vh;
+        width: 80vw;
+    }
+    .productDescrSection {
+        padding: 1rem;
+        & div {
+            font-size: 1.2rem;
+        }
+    }
 }
