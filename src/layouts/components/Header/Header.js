@@ -70,7 +70,9 @@ function Header() {
               <span>Thực đơn</span>
             </li>
           </Link>
-          <li>Theo dõi đơn hàng</li>
+          <Link tag="li" to={'/tracking'}>
+            <li>Theo dõi đơn hàng</li>
+          </Link>
         </ul>
         <div className={styles.languageSwitch}>
           <img

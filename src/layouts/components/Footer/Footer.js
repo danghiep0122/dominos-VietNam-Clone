@@ -16,16 +16,20 @@ function Footer() {
           <div className={styles.footerConnect}>
             <p>Kết nối Domino's Pizza Việt Nam:</p>
             <div className={styles.footerConnectIcons}>
-              <FacebookIcon
-                className={styles.connectIcon}
-                height="24"
-                width="14"
-              />
-              <InstagramIcon
-                className={styles.connectIcon}
-                height="24"
-                width="20"
-              />
+              <a href="https://www.facebook.com/">
+                <FacebookIcon
+                  className={styles.connectIcon}
+                  height="24"
+                  width="14"
+                />
+              </a>
+              <a href="https://www.instagram.com/">
+                <InstagramIcon
+                  className={styles.connectIcon}
+                  height="24"
+                  width="20"
+                />
+              </a>
             </div>
           </div>
         </div>
@@ -50,20 +54,34 @@ function Footer() {
           <div className={styles.takeTheSpace}></div>
           <div className={styles.groupNavForPC}>
             <ul>
-              <li>Cam kết</li>
-              <li>Lịch sử</li>
-              <li>Tuyển dụng</li>
+              <Link to="/">
+                <li>Cam kết</li>
+              </Link>
+              <Link to="/">
+                <li>Lịch sử</li>
+              </Link>
+              <Link to="/">
+                <li>Tuyển dụng</li>
+              </Link>
             </ul>
             <ul>
-              <Link to={'/menu'}>
+              <Link to="/menu">
                 <li>Thực đơn</li>
               </Link>
-              <li>Mã e-voucher</li>
-              <li>Khuyến mãi</li>
+              <Link to="/voucher">
+                <li>Mã e-voucher</li>
+              </Link>
+              <Link to="/promotion">
+                <li>Khuyến mãi</li>
+              </Link>
             </ul>
             <ul>
-              <li>Theo dõi đơn hàng</li>
-              <li>Danh sách cửa hàng</li>
+              <Link to="/tracking">
+                <li>Theo dõi đơn hàng</li>
+              </Link>
+              <Link to="/">
+                <li>Danh sách cửa hàng</li>
+              </Link>
             </ul>
           </div>
 
