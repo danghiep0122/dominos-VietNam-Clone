@@ -1,17 +1,26 @@
-import allPizza from '../../data/allPizza.json'
+import fetch from '../../apiServices/fetchService'
+import { useEffect } from 'react'
 import {
   PizzaLargeIcon,
   PizzaMediumIcon,
   PizzaSmallIcon,
 } from '../../icons/Icons'
 import ItemCard from '../../layouts/components/ItemCard'
+import { useState } from 'react'
 import { formatVND } from '../../ultilities/format'
 
 function TypesOfPizza({ category }) {
+  const [allPizza, setAllPizza] = useState([])
+  // const [favPrice, setFavPrice] = useState(0)
+
+  useEffect(() => {
+    fetch('allPizza').then((response) => {
+      setAllPizza(response)
+    })
+  }, [])
+
   const allPremiumPizza = allPizza.filter((x) => x.tag === 'premium')
-
   const allFavoritePizza = allPizza.filter((x) => x.tag === 'favorite')
-
   const allSignaturePizza = allPizza.filter((x) => x.tag === 'signature')
 
   let premiumCategoryPizza
@@ -35,33 +44,27 @@ function TypesOfPizza({ category }) {
         x.category.find((x) => x === `${category}`)
       ))
 
-  const smallPizzaPrice = (input) =>
-    allPizza.filter((x) => x.tag === input)[0].prices.size7
-
-  const mediumPizzaPrice = (input) =>
-    allPizza.filter((x) => x.tag === input)[0].prices.size9
-
-  const largePizzaPrice = (input) =>
-    allPizza.filter((x) => x.tag === input)[0].prices.size12
-
   const allPizzaData = [
     {
       tagName: 'premium',
       data: allPremiumPizza,
       title: '⭐ Premium Pizza ⭐',
       dataByCategory: premiumCategoryPizza,
+      size7: true,
     },
     {
       tagName: 'favorite',
       data: allFavoritePizza,
       title: '⭐ Favorite Pizza ⭐',
       dataByCategory: favoriteCategoryPizza,
+      size7: true,
     },
     {
       tagName: 'signature',
       data: allSignaturePizza,
-      title: '⭐ Signature Pizza ⭐',
+      title: '🌟 Signature Pizza 🌟',
       dataByCategory: signatureCategoryPizza,
+      size7: false,
     },
   ]
 
@@ -78,24 +81,32 @@ function TypesOfPizza({ category }) {
             <h2 style={{ textAlign: 'center' }}>{type.title}</h2>
             <div className="pizza-size-price-wrapper">
               <ul>
-                <li
-                  style={
-                    smallPizzaPrice(type.tagName) ? {} : { display: 'none' }
-                  }
-                >
+                <li style={type.size7 ? {} : { display: 'none' }}>
                   <PizzaSmallIcon />
                   <p>{`Small (7"):`}</p>
-                  <span>{formatVND(smallPizzaPrice(type.tagName))}</span>
+                  <span>
+                    {type.data[0] === undefined
+                      ? '0'
+                      : formatVND(type.data[0].prices.size7)}
+                  </span>
                 </li>
                 <li>
                   <PizzaMediumIcon />
                   <p>{`Medium (9"):`}</p>
-                  <span>{formatVND(mediumPizzaPrice(type.tagName))}</span>
+                  <span>
+                    {type.data[0] === undefined
+                      ? '0'
+                      : formatVND(type.data[0].prices.size9)}
+                  </span>
                 </li>
                 <li>
                   <PizzaLargeIcon />
                   <p>{`Large (12"):`}</p>
-                  <span>{formatVND(largePizzaPrice(type.tagName))}</span>
+                  <span>
+                    {type.data[0] === undefined
+                      ? '0'
+                      : formatVND(type.data[0].prices.size12)}
+                  </span>
                 </li>
               </ul>
             </div>

@@ -6,7 +6,6 @@ import {
   AccountIcon,
   DominoIconNoText,
   DeliveryIcon,
-  MenuBarIcon,
   PromotionIcon,
   MenuIcon,
 } from '../../../icons/Icons'
@@ -32,8 +31,8 @@ function Header() {
           <DominoIcon className={styles.dominoLogo} width="156" height="24" />
           <DominoIconNoText
             className={styles.dominoLogoNoText}
-            width="24px"
-            height="24px"
+            width="24"
+            height="24"
           />
         </Link>
         <Link to={'/'}>
@@ -42,62 +41,73 @@ function Header() {
       </div>
       {toggleModal && <LogModal />}
 
-      <div className={styles.navbarMobile}>
-        <DeliveryIcon width="40px" height="24px" />
-        <div className={styles.navbarSmall}>
-          <PromotionIcon width="40px" height="24px" />
-          <MenuIcon width="40px" height="24px" />
-        </div>
-        <div onClick={openLoginModal}>
-          <AccountIcon width="40px" height="24px" />
-        </div>
-        <Link to={'/cart'}>
-          <CartIcon width="40px" height="24px" />
-        </Link>
-        <MenuBarIcon width="40px" height="24px" />
-      </div>
+      <ul className={styles.navbarMobile}>
+        <li>
+          <Link to={'/tracking'}>
+            <DeliveryIcon width="40px" height="24px" />
+          </Link>
+        </li>
+        <li>
+          <Link to={'/promotion'}>
+            <PromotionIcon width="40px" height="24px" />
+          </Link>
+        </li>
+        <li>
+          <Link to={'/menu'}>
+            <MenuIcon width="40px" height="24px" />
+          </Link>
+        </li>
+        <li>
+          <div onClick={openLoginModal}>
+            <AccountIcon width="40px" height="24px" />
+          </div>
+        </li>
+        <li>
+          <Link to={'/cart'}>
+            <CartIcon width="40px" height="24px" />
+          </Link>
+        </li>
+      </ul>
 
       <div className={styles.navbarPC}>
         <ul className={styles.navList}>
-          <Link to={'/voucher'}>
-            <li>Mã E-voucher</li>
-          </Link>
-          <Link tag="li" to={'/promotion'}>
-            <li>Khuyến mãi</li>
-          </Link>
-          <Link tag="li" to={'/menu'}>
-            <li>
-              <span>Thực đơn</span>
-            </li>
-          </Link>
-          <Link tag="li" to={'/tracking'}>
-            <li>Theo dõi đơn hàng</li>
-          </Link>
+          <li>
+            <Link to={'/voucher'}>Mã E-voucher</Link>
+          </li>
+          <li>
+            <Link to={'/promotion'}>Khuyến mãi</Link>
+          </li>
+          <li>
+            <Link to={'/menu'}>Thực đơn</Link>
+          </li>
+          <li>
+            <Link to={'/tracking'}>Theo dõi đơn hàng</Link>
+          </li>
         </ul>
         <div className={styles.languageSwitch}>
           <img
             className={styles.languageFlag}
             alt="VietNam"
             src={images.flagVn}
+            onClick={() => alert('developing')}
           />
           <img
             className={styles.languageFlag}
             alt="English"
             src={images.flagEn}
+            onClick={() => alert('developing')}
           />
         </div>
         <div className={styles.navbarButtonPC}>
-          <div onClick={openLoginModal}>
-            <AccountIcon
-              className={styles.buttonPC}
-              width="28px"
-              height="28px"
-            />
+          <div className={styles.buttonPC} onClick={openLoginModal}>
+            <AccountIcon width="28px" height="28px" />
           </div>
-          <Link to={'/cart'}>
-            <div className={styles.cartNoti}>{cartItems.length}</div>
-            <CartIcon className={styles.buttonPC} width="28px" height="28px" />
-          </Link>
+          <div className={styles.buttonPC}>
+            <Link to={'/cart'}>
+              <div className={styles.cartNoti}>{cartItems.length}</div>
+              <CartIcon width="28px" height="28px" />
+            </Link>
+          </div>
         </div>
       </div>
     </nav>

@@ -20,14 +20,14 @@ function Footer() {
                 <FacebookIcon
                   className={styles.connectIcon}
                   height="24"
-                  width="14"
+                  width="24"
                 />
               </a>
               <a href="https://www.instagram.com/">
                 <InstagramIcon
                   className={styles.connectIcon}
                   height="24"
-                  width="20"
+                  width="24"
                 />
               </a>
             </div>
@@ -37,8 +37,8 @@ function Footer() {
           <Link to="/">
             <DominoIconNoText
               className={styles.dominoIconBig}
-              width="72"
-              height="72"
+              width="46"
+              height="46"
             />
           </Link>
 

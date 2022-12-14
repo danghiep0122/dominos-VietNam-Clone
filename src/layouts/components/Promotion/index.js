@@ -1,9 +1,19 @@
-import allPizza from '../../../data/allPizza.json'
+import { useEffect, useState } from 'react'
+
+import fetch from '../../../apiServices/fetchService'
 import ItemCard from '../ItemCard'
 import { Link } from 'react-router-dom'
 import './styles.scss'
 
 function Promotion() {
+  const [allPizza, setAllPizza] = useState([])
+
+  useEffect(() => {
+    fetch('allPizza').then((response) => {
+      setAllPizza(response)
+    })
+  }, [])
+
   const randomPizza = () =>
     [...allPizza].sort(() => 0.5 - Math.random()).slice(0, 4)
 

@@ -1,11 +1,20 @@
-import PromotionItem from './PromotionItem'
+import { useEffect, useState } from 'react'
+
+import fetch from '../../apiServices/fetchService'
 import styles from './styles.module.scss'
-import data from '../../data/promotionData.json'
+import PromotionItem from './PromotionItem'
 
 function PromotionList() {
+  const [promnotionData, setPromotionData] = useState([])
+
+  useEffect(() => {
+    fetch('promotionData').then((dataFetched) => {
+      setPromotionData(dataFetched)
+    })
+  }, [])
   return (
     <section className={styles.promotionListWrapper}>
-      {data.map(({ id, title, description, imgUrl, button }) => (
+      {promnotionData.map(({ id, title, description, imgUrl, button }) => (
         <div key={id}>
           <PromotionItem
             title={title}

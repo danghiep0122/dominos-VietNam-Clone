@@ -1,20 +1,20 @@
 import { useState, useRef, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 
+import fetch from '../../../apiServices/fetchService'
 import { delivery } from '../../../feature/addressInput/addressInputSlice'
 import { storeAddress } from '../../../feature/addressInput/addressSelectSlice'
 import { SearchIcon, XtimesIcon } from '../../../icons/Icons'
-import allAddress from './mockdata-address'
 import './styles.scss'
 
 const AddressInput = () => {
   const addressText = useRef(null)
   const [carryOut, setCarryOut] = useState(false)
   const [addressInput, setAddressInput] = useState('')
+  const [storeAddressData, setStoreAddressData] = useState('')
 
   //dropdown data
   const [dropdownShow, setDropdownShow] = useState(false)
-  const [data, setData] = useState('')
   const [selectedValue, setSelectedValue] = useState(null)
 
   const dispatch = useDispatch()
@@ -50,7 +50,9 @@ const AddressInput = () => {
 
   //Dropdown Address Data Fetching
   useEffect(() => {
-    setData(allAddress)
+    fetch('/storeAddressData').then((addressData) => {
+      setStoreAddressData(addressData)
+    })
   }, [])
 
   //dropdown data onclick handle
@@ -65,7 +67,7 @@ const AddressInput = () => {
     if (!selectedValue) {
       return false
     }
-    return data.id === address
+    return storeAddressData.id === address
   }
 
   const handleKeyDown = (e) => {
@@ -120,8 +122,8 @@ const AddressInput = () => {
           </button>
           {dropdownShow && (
             <div className="dropdown-menu">
-              {data &&
-                data.map(({ id, address }) => (
+              {storeAddressData &&
+                storeAddressData.map(({ id, address }) => (
                   <div
                     onClick={() => onItemClick({ address })}
                     className={`dropdown-item ${

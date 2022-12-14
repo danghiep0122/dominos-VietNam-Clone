@@ -1,8 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { useRef } from 'react'
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 
-import addONItem from '../../data/addOnItem.json'
+import fetch from '../../apiServices/fetchService'
 import CartSuggestion from './CartSuggestion'
 import {
   onPlus,
@@ -15,8 +14,15 @@ import { formatVND } from '../../ultilities/format'
 
 export function CartItems() {
   const [popupMessage, setPopupMessage] = useState(false)
+  const [addOnItemData, setAddOnItemData] = useState([])
 
   const cartList = useRef()
+
+  useEffect(() => {
+    fetch('/addOnData').then((addOnData) => {
+      setAddOnItemData(addOnData)
+    })
+  }, [])
 
   const handlePlusItem = () => {
     setPopupMessage(true)
@@ -146,7 +152,7 @@ export function CartItems() {
           <CartSuggestion
             handlePlusItem={handlePlusItem}
             cartList={cartList}
-            product={addONItem}
+            product={addOnItemData}
           />
         </div>
       </section>
