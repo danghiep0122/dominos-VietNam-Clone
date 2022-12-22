@@ -7,6 +7,7 @@ import Menu from './pages/Menu'
 import TrackingOrder from './pages/TrackingOrder'
 import Account from './pages/Account'
 import Promotion from './pages/Promotion'
+import Checkout from './pages/Checkout'
 import './App.scss'
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Route path="voucher" element={<Voucher />} />
       <Route path="promotion" element={<Promotion />} />
       <Route path="cart" element={<Cart />} />
+      <Route path="checkout" element={<Checkout />} />
       <Route path="tracking" element={<TrackingOrder />} />
       <Route path="menu" element={<Menu />} />
       <Route path="account-info" element={<Account />} />

@@ -3,10 +3,12 @@ import { useState } from 'react'
 
 import { EmptyCartIcon } from '../../icons/Icons'
 import { formatVND } from '../../ultilities/format'
-import { onRemove, onCheckOut } from '../../feature/cartItem/cartItemSlice'
+import { onRemove } from '../../feature/cartItem/cartItemSlice'
+import { useNavigate } from 'react-router-dom'
 
 function CartSection() {
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const cartList = useSelector((state) => state.CART_ITEM.value)
   const [promotionCodeInput, setPromotionCodeInput] = useState('')
@@ -120,7 +122,7 @@ function CartSection() {
                   `Checkout with ${formatVND(itemsPrice)}`
                 )
                 if (confirmBox === true) {
-                  dispatch(onCheckOut(cartList))
+                  navigate('/checkout')
                 }
               }}
               className="checkout-btn"

@@ -3,20 +3,17 @@ import { useState, useRef, useEffect } from 'react'
 
 import fetch from '../../apiServices/fetchService'
 import CartSuggestion from './CartSuggestion'
-import {
-  onPlus,
-  onMinus,
-  onRemove,
-  onCheckOut,
-} from '../../feature/cartItem/cartItemSlice'
+import { onPlus, onMinus, onRemove } from '../../feature/cartItem/cartItemSlice'
 import { XtimesIcon } from '../../icons/Icons'
 import { formatVND } from '../../ultilities/format'
+import { useNavigate } from 'react-router-dom'
 
 export function CartItems() {
   const [popupMessage, setPopupMessage] = useState(false)
   const [addOnItemData, setAddOnItemData] = useState([])
 
   const cartList = useRef()
+  const navigate = useNavigate()
 
   useEffect(() => {
     fetch('/addOnData').then((addOnData) => {
@@ -34,7 +31,7 @@ export function CartItems() {
   const handleCheckOut = () => {
     const confirmBox = window.confirm(`Checkout with ${formatVND(totalPrice)}`)
     if (confirmBox === true) {
-      dispatch(onCheckOut(cartList))
+      navigate('/checkout')
     }
   }
 
